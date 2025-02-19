@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set and viewport settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EurekaBot: Home</title>
+    <style>
+        /* Reset margin and padding for all elements */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Body background color */
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            box-shadow: 0 0 15px hsl(206, 100%, 30%);
+
+        }
+
+        /* Intro text styling */
+        .intro {
+            font-size: 30px;
+            color: white;
+
+        }
+
+        /* Intro section styling */
+        #intro {
+            background-color: hsl(206, 100%, 30%);
+            display: flex;
+            justify-content: space-between;
+            padding: 7px 20px;
+            align-items: center;
+
+
+        }
+
+        /* Menu button styling */
+        .menu {
+            width: 30px;
+            height: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .menu span {
+            display: block;
+            width: 90%;
+            height: 3px;
+            background: white;
+            border-radius: 5px;
+            transition: 0.4s;
+        }
+
+        /* Transformation to Cross */
+        .menu.active span:nth-child(1) {
+            transform: translateY(8.5px) rotate(45deg);
+        }
+
+        .menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu.active span:nth-child(3) {
+            transform: translateY(-8.5px) rotate(-45deg);
+        }
+
+        .navbar {
+            height: 0;
+            overflow: hidden;
+            transition: height 0.4s ease-in-out;
+            background: linear-gradient(135deg, hsl(206, 100%, 30%), hsl(206, 100%, 62%));
+
+        }
+
+        .navbar.active {
+            height: calc(100vh - 48px);
+            /* Adjust 60px based on the actual header height */
+            max-height: calc(100vh - 48px);
+        }
+
+        nav {
+            padding: 30px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 25px;
+            padding: 20px 0;
+            display: block;
+            text-align: center;
+        }
+
+        a:hover {
+            font-weight: bold;
+            background: hsla(206, 100%, 30%, 0.404);
+            border-radius: 10px;
+            box-shadow: 0 0 15px hsl(206, 100%, 30%);
+            ;
+        }
+
+        section {
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            animation: fadeIn 1.2s ease-in-out;
+            background: linear-gradient(135deg, hsl(206, 100%, 30%), hsl(206, 100%, 62%));
+            height: calc(100vh - 208px);
+            /* Adjust 60px based on the actual header height */
+            max-height: calc(100vh - 208px);
+            overflow: hidden;
+        }
+     
+        .animation {
+            position: fixed;
+            bottom: 5px;
+            left: 33%;
+            display: flex;
+            align-items: center;
+            width: 70%;
+            font-size: 100px;
+            animation: left-to-right ease-in-out 1s infinite alternate;
+        }
+
+        @keyframes left-to-right {
+            0% {
+            transform: translateX(-50%) translateY(0%);
+            }
+
+            100% {
+            transform: translateX(-35%) translateY(0%);
+            }
+        }
+
+        .click-text {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Intro section with title and menu button -->
+        <div id="intro">
+            <h1 class="intro">EurekaBot</h1>
+            <div class="menu" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <div class="navbar">
+        <nav>
+            <!-- Navigation menu -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </div>
+    <section>
+        <h2>Meet EurekaBot - Your Science Knowledge Assistant!</h2>
+        <p>Shubham's AI Chatbot! Dive into the future of learning with our cutting-edge science companion. Ask any
+            question from your science book and get accurate answers instantly.</p>
+   
+        <div class="animation"><div class="click-text">Click here to chat with EurekaBot</div>→</div>
+    </section>
+
+    <!-- Botpress webchat scripts -->
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/01/05/06/20250105062446-XP5SHLWC.js"></script>
+    <script>
+        function toggleNav() {
+            document.querySelector(".navbar").classList.toggle("active");
+            document.querySelector(".menu").classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>

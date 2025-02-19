@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EurekaBot: Features</title>
+    <style>
+        /* Reset margin and padding for all elements */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Body background color */
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            box-shadow: 0 0 15px hsl(206, 100%, 30%);
+
+        }
+
+        /* Intro text styling */
+        .intro {
+            font-size: 30px;
+            color: white;
+
+        }
+
+        /* Intro section styling */
+        #intro {
+            background-color: hsl(206, 100%, 30%);
+            display: flex;
+            justify-content: space-between;
+            padding: 7px 20px;
+            align-items: center;
+
+
+        }
+
+        /* Menu button styling */
+        .menu {
+            width: 30px;
+            height: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .menu span {
+            display: block;
+            width: 90%;
+            height: 3px;
+            background: white;
+            border-radius: 5px;
+            transition: 0.4s;
+        }
+
+        /* Transformation to Cross */
+        .menu.active span:nth-child(1) {
+            transform: translateY(8.5px) rotate(45deg);
+        }
+
+        .menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu.active span:nth-child(3) {
+            transform: translateY(-8.5px) rotate(-45deg);
+        }
+
+        .navbar {
+            height: 0;
+            overflow: hidden;
+            transition: height 0.4s ease-in-out;
+            background: linear-gradient(135deg, hsl(206, 100%, 30%), hsl(206, 100%, 62%));
+
+        }
+
+        .navbar.active {
+            height: calc(100vh - 85px);
+            /* Adjust 60px based on the actual header height */
+            max-height: calc(100vh - 85px);
+        }
+
+        nav {
+            padding: 30px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 25px;
+            padding: 20px 0;
+            display: block;
+            text-align: center;
+        }
+
+        a:hover {
+            font-weight: bold;
+            background: hsla(206, 100%, 30%, 0.404);
+            border-radius: 10px;
+            box-shadow: 0 0 15px hsl(206, 100%, 30%);
+            ;
+        }
+
+        .main {
+            height: calc(100vh - 45px);
+            /* Adjust 60px based on the actual header height */
+            max-height: calc(100vh - 45px);
+        }
+
+        .about {
+            margin: 0px 15px;
+        }
+        .p1, .p2, .p3, .p4 {
+            background: white;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        h1 {
+            color: hsl(0, 0%, 0%);
+            font-size: 30px;
+            cursor: pointer;
+            margin: 10px 0 0 0;
+        }
+
+        h2 {
+            color: hsl(0, 0%, 0%);
+            font-size: 20px;
+            margin: 0 0 5px 0;
+        }
+        .about p {
+            color: hsl(0, 0%, 0%);
+            font-size: 16px;
+            margin: 0 0 0 5px ;
+        }
+
+        .main.active {
+            height: 0px;
+        }
+
+        footer {
+            background: hsl(206, 100%, 30%);
+            color: white;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        footer p {
+            text-align: left;
+            padding: 10px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Intro section with title and menu button -->
+        <div id="intro">
+            <h1 class="intro">EurekaBot</h1>
+            <div class="menu" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <div class="navbar">
+        <nav>
+            <!-- Navigation menu -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </div>
+    <section class="main">
+        <div class="about">
+            <h1>About EurekaBot</h1>
+            <div class="p1">
+                <h2>Aim of the Project</h2>
+                <p>EurekaBot is designed to help students learn science interactively by providing accurate answers from
+                    a structured database of a science book.</p>
+            </div>
+            <div class="p2">
+                <h2>Why EurekaBot?</h2>
+                <p>✅ Quick & precise answers from verified content<br>
+                    ✅ Interactive learning with AI assistance<br>
+                    ✅ No misinformation - Only book-based responses
+                </p>
+            </div>
+            <div class="p3">
+                <h2>How Does It Work?</h2>
+                <p>1. Ask a Question - Type a science-related query.<br>
+                    2. Search & Process - The chatbot finds the best match from its database.<br>
+                    3.Get an Answer - EurekaBot instantly displays the correct response</p>
+            </div>
+            <div class="p4">
+                <h2>About the Creator</h2>
+                <p>Shubham Khairnar, a passionate web developer, built
+                    EurekaBot to demonstrate how AI can enhance education.</p>
+            </div>
+
+
+
+
+        </div>
+    </section>
+    <footer>
+        <p>Created by Shubham Khairnar | &copy; 2025 EurekaBot</p>
+    </footer>
+    <script>
+        function toggleNav() {
+            document.querySelector(".navbar").classList.toggle("active");
+            document.querySelector(".menu").classList.toggle("active");
+            document.querySelector(".main").classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>
